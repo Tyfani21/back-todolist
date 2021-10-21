@@ -1,19 +1,17 @@
 if(process.env.NODE_ENV!=='production'){require('dotenv').config()}
-const corsOptions ={
-    origin: 'http://localhost:3001',
-    optionSucessStatus: 200,
-}
 
 const express = require('express');
 const app = express();
 const TarefaRoutes = require('./routes/routers')
 const Conn = require('./conn/conn')
-const cors = require('cors')
-app.use(cors(corsOptions))
+const Cors = require('cors')
 
 app.use(express.json())
 app.use('/tarefas', TarefaRoutes);
-app.use(cors())
+app.use(Cors())
+
+
+
 
 const db_url = process.env.DB_HOST;
 const db_user = process.env.DB_USER;
