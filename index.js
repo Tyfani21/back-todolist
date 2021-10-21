@@ -7,8 +7,9 @@ const Conn = require('./conn/conn')
 const Cors = require('cors')
 
 app.use(express.json())
-app.use('/tarefas', TarefaRoutes);
 app.use(Cors())
+app.use('/tarefas', TarefaRoutes);
+
 
 
 
