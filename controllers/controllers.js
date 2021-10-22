@@ -31,7 +31,7 @@ class TarefaController {
         const id = req.params.id;
         const tarefa = req.body;
         await tarefasService.editarTarefa(id, tarefa).then(()=>{
-            res.status(200).send({message: `Tarefa editada com sucesso`});
+            res.send({message: `Tarefa editada com sucesso`}).status(200);
         }).catch((err)=>res.status(500).send({message:`Erro no servidor ${err}`}))
     } 
     deteleTarefa = async (req, res) => {
